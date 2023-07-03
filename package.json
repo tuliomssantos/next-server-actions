@@ -25,6 +25,7 @@
     "server-only": "^0.0.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.6",
+    "wretch": "^2.6.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
@@ -41,6 +42,7 @@
     "prettier": "^2.8.8",
     "vite": "^4.3.9",
     "vite-tsconfig-paths": "^4.2.0",
-    "vitest": "^0.32.2"
+    "vitest": "^0.32.2",
+    "vitest-fetch-mock": "^0.2.2"
   }
 }
