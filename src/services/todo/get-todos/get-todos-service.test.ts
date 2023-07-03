@@ -1,9 +1,10 @@
 import { describe, it, expect } from 'vitest'
 
-import { getTodoService } from './get-todo-service'
-import { todosMock } from './mocks'
+import { getTodosService } from './get-todos-service'
 
-describe('getTodoService', () => {
+import { todosMock } from '@/services/todo/mocks'
+
+describe('getTodosService', () => {
   beforeEach(() => {
     fetchMock.resetMocks()
   })
@@ -11,7 +12,7 @@ describe('getTodoService', () => {
   it('should return todos', async () => {
     fetchMock.mockResponseOnce(JSON.stringify(todosMock))
 
-    const todos = await getTodoService()
+    const todos = await getTodosService()
 
     expect(todos).toEqual(todosMock)
   })

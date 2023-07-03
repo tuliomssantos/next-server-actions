@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 
 import { getTodos } from './get-todos'
 
-import { todosMock } from './mocks'
+import { todosMock } from '@/services/todo/mocks'
 
 describe('getTodos', () => {
   it('should return todos', async () => {

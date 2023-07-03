@@ -2,18 +2,20 @@ import { z } from 'zod'
 
 import { type Todo, todosSchema } from '@/entities/todo'
 
-export interface IGetTodoService {
+export interface IGetTodosService {
   (): Promise<unknown>
 }
 
 export interface IGetTodos {
-  (service: IGetTodoService): Promise<[undefined | Error, undefined | Todo[]]>
+  (service: IGetTodosService): Promise<[undefined | Error, undefined | Todo[]]>
 }
 
 export const getTodos: IGetTodos = async service => {
   try {
     const response = await service()
+
     const todos = todosSchema.parse(response)
+
     return [undefined, todos]
   } catch (error) {
     if (error instanceof z.ZodError) {
