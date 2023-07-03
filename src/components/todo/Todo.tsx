@@ -4,6 +4,8 @@ import { Trash2 } from 'lucide-react'
 
 import { type Todo } from '@/entities/todo'
 
+import { CheckboxUpdateTodo } from '@/components/checkbox-update-todo'
+
 export type TodoProps = {
   todo: Todo
 }
@@ -17,14 +19,7 @@ export default function TodoComponent({ todo }: TodoProps) {
 
       <div className="flex items-center gap-4">
         {/* add checkbox */}
-        <input
-          type="checkbox"
-          name="completed"
-          id="completed"
-          className="h-6 w-6"
-          checked={todo.completed}
-          //   onChange={() => {}}
-        />
+        <CheckboxUpdateTodo todo={todo} />
 
         {/* add delete button */}
         <button
